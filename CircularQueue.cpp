@@ -1,46 +1,80 @@
-//
-//  CircularQueue.cpp
-//  Circular Queue
-//
-//  Created by Mahmood Moussavi on 2024-04-09.
-//
+/*
+ *  CircularQueue.cpp
+ *  ENSF 694 Lab 3 - Exercise D
+ *  Created by Mahmood Moussavi
+ *  Completed by: Jeff Wheeler
+ *  Submission date: July 17, 2024
+ */
 
 #include "CircularQueue.h"
 
 
 CircularQueue::CircularQueue() {
-    // Students are supposted add or replace the existing code with the CORRECT conde.
+    head = 1;
+    tail = 1;
+    count = 0;
 }
 
 bool CircularQueue::isFull()const {
-    // Students are supposted add or replace the existing code with the CORRECT conde.
+    if (head == tail + 1)
+        return true;
     return false;
 }
 
 bool CircularQueue::isEmpty()const {
-    // Students are supposted add or replace the existing code with the CORRECT conde.
+    if (head == tail)
+        return true;
     return false;
 }
 
 int CircularQueue::enqueue(int element) {
-    // Students are supposted add or replace the existing code with the CORRECT conde.
-    return NULL;
+    if(CircularQueue::isFull()){
+        std::cout << "Queue is full\n";
+        return tail;
+    }
+    tail = (tail +1) % SIZE;
+    arr[tail] = element;
+    count++;
+    return tail;
 }
 
 int CircularQueue::dequeue() {
-    // Students are supposted add or replace the existing code with the CORRECT conde.
-    return NULL;
+    if(CircularQueue::isEmpty()){
+        std::cout << "Queue is empty\n";
+        return head;
+    }
+    head = (head + 1) % SIZE;
+    // int dequeue_value = arr[head];
+    count--;
+    return head;
 }
 
 int CircularQueue::counter()const{
-    // Students are supposted add or replace the existing code with the CORRECT conde.
-    return NULL;
+    return count;
 }
 
-const int* CircularQueue::get_arr()const{    // Students are supposted add or replace the existing code with the CORRECT conde.
-    return NULL;
+const int* CircularQueue::get_arr()const{
+    return arr;
 }
 
 void CircularQueue::displayQueue()const {
-    // Students are supposted add or replace the existing code with the CORRECT conde.
+    std::cout << "\nElements in the queue:\n";
+    if(CircularQueue::isEmpty()){
+        std::cout << "Queue is empty\n";
+    }
+    else if (tail > head && tail < SIZE){    
+        for (int i = head + 1; i <= tail; i++){
+            std::cout << arr[i] << " ";
+        }
+        std::cout << std::endl;
+    }
+    else if (tail < head){
+        for(int i = head + 1; i < SIZE; i++){
+            std::cout << arr[i] << " ";
+        }
+        for (int i = 0; i <= tail; i++){
+            std::cout << arr[i] << " ";
+        }
+        std::cout << std::endl;
+    }
 }

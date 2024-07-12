@@ -1,5 +1,9 @@
-// File lab3exe_C.cpp
-// ENSF 694 Fall 2023,  LAB3 - EXERCISE C
+/*
+ *  lab3clock.h
+ *  ENSF 694 Lab 3 - Exercise C
+ *  Created by Mahmood Moussavi
+ *  Submission date: July 17, 2024
+ */
 
 #include <iostream>
 #include <iomanip>

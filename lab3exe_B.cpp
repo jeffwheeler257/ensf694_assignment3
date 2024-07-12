@@ -15,14 +15,14 @@ int main(void)
 {
     Cplx num1;
     
-    num1.setRealPart(666);
+    num1.setRealPart(666); // point 1
     
     
-    global_print(num1);
+    global_print(num1); // point 2
     
-    Cplx num2(34, 5);
+    Cplx num2(34, 5); // point 3
     
-    global_print(num2);
+    global_print(num2); 
     
     Cplx *p = &num2;
     

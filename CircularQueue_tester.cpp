@@ -1,8 +1,11 @@
-//
-//  main.cpp
-//  Circular Queue
-//
-//  Created by Mahmood Moussavi on 2024-04-09.
+/*
+ *  CircularQueue_tester.cpp
+ *  ENSF 694 Lab 3 - Exercise D
+ *  Created by Mahmood Moussavi
+ *  Completed by: Jeff Wheeler
+ *  Submission date: July 17, 2024
+ */
+
 #if 0
 #include "CircularQueue.h"
 
@@ -36,7 +39,7 @@ int main() {
 using namespace std;
 #include "CircularQueue.h"
 // STUDENT MUST USE THE FULL PATH FOR YOUR WORKING DIRECTOR IN THE FOLLOWING LINE
-const char* input_file_full_path = "full_patH_for_your_working_director/data1.txt";
+const char* input_file_full_path = "C:/Users/jeffw/Documents/_Software Masters/ENSF 694/ensf694_assignment3/data2.txt";
 
 CircularQueue* run_test();
 

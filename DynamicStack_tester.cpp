@@ -1,9 +1,9 @@
-//
-//  main.cpp
-//  Dynamic Stack
-//
-//  Created by Mahmood Moussavi on 2024-04-09.
-//
+/*
+ *  DynamicStack_tester.cpp
+ *  ENSF 694 Lab 3 - Exercise E
+ *  Created by Mahmood Moussavi
+ *  Submission date: July 17, 2024
+ */
 
 #include <iostream>
 #include "DynamicStack.h"
@@ -17,13 +17,13 @@ int main() {
     stack->push(452);
     stack->push(322);
     stack->push(100);
-    std::cout << "Expected vlues are: 122 452 322 100" << endl;
+    std::cout << "Expected values are: 122 452 322 100" << endl;
     std::cout << "Actual values are: ";
     stack->display();
-    std::cout << "\nPoping 2 values from top of the stack ..." << endl;
+    std::cout << "\nPopping 2 values from top of the stack ..." << endl;
     stack->pop();
     stack->pop();
-    std::cout << "Expected vlues are : 122 452 " << endl;
+    std::cout << "Expected values are : 122 452 " << endl;
     std::cout << "Actual values are: ";
     stack->display();
     std::cout << "\nPushing 8 more values into the stack ..." << endl;
@@ -35,16 +35,16 @@ int main() {
     stack->push(10000);
     stack->push(13000);
     stack->push(14000);
-    std::cout << "Expected vlues are : 122 452 1000 2000 3000 40000 4000 10000 13000 14000 " << endl;
+    std::cout << "Expected values are : 122 452 1000 2000 3000 4000 5000 10000 13000 14000 " << endl;
     std::cout << "Actual values are: ";
     stack->display();
     
-    std::cout << "\n Checking current size, capacity and the top value in the stack:" << endl;
+    std::cout << "\nChecking current size, capacity and the top value in the stack:" << endl;
     std::cout << stack->size() << endl;
     std::cout << stack->capacity() << endl;
     std::cout << stack->top() << endl;
     
-    std::cout << "\nPoping 9 values from top of the stack ..." << endl;
+    std::cout << "\nPopping 9 values from top of the stack ..." << endl;
     stack->pop();
     stack->pop();
     stack->pop();
@@ -55,7 +55,7 @@ int main() {
     stack->pop();
     stack->pop();
 
-    std::cout << "Expected vlues are : 122" << endl;
+    std::cout << "Expected values are : 122" << endl;
     std::cout << "Actual values are: ";
     stack->display();
     
@@ -64,7 +64,7 @@ int main() {
     std::cout << stack->capacity() << endl;
     std::cout << stack->top() << endl;
     
-    std::cout << "\nChecking whether stack is emoty or not:" << endl;
+    std::cout << "\nChecking whether stack is empty or not:" << endl;
     if(stack->empty())
         std::cout << "Yes: Stack is empty."<< endl;
     else

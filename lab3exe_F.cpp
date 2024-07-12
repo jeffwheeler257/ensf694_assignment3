@@ -1,5 +1,10 @@
-//  ENSF 694 - Fall 2023  Lab3 - exercise F
-// lab3exer_A.cpp
+/*
+ *  lab3exe_F.cpp
+ *  ENSF 694 Lab 3 - Exercise F
+ *  Created by Mahmood Moussavi
+ *  Completed by Jeff Wheeler
+ *  Submission date: July 17, 2024
+ */
 
 #include<vector>
 #include<string>
@@ -12,13 +17,13 @@ using std::string;
 
 typedef vector<string> String_Vector;
 
-String_Vector transpose(const String_Vector& sv);
 // REQUIRES:
 //    sv.size() >= 1
 //    All the strings in sv are the same length, and that length is >= 1.
 // PROMISES:
 //    Return value is the "transpose" of sv, as defined in the Exercise B
 //    instructions.
+String_Vector transpose(const String_Vector& sv);
 
 int main() {
     
@@ -39,27 +44,33 @@ int main() {
                 c = 'A';
         }
     
-    
+    cout << "Original string vector\n";
+
     for(int i = 0; i < ROWS; i++) {
         cout<< sv.at(i);
         cout << endl;
     }
     
+    cout << "\nTranspose string vector\n";
+
     String_Vector vs = transpose(sv);
     for(int i = 0; i < (int)vs.size(); i++)
         cout << vs.at(i) << endl;
-    
+
     return 0;
 }
 
 
 
 String_Vector transpose (const String_Vector& sv) {
-    
-    // STUDENTS MUST COMPLETE THE DEFINITION OF THIS FUNCTION.
-     
-    String_Vector vs;
-    return vs;
+    String_Vector new_vs;
+    new_vs.resize(sv.at(0).size());
+    for (int i = 0; i < (int)new_vs.size(); i++){
+        for(int j = 0; j < (int)sv.size(); j++){
+            new_vs.at(i).push_back(sv.at(j).at(i));
+        }
+    }
+    return new_vs;
     
 }
 
